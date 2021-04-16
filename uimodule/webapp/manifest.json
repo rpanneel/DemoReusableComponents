@@ -5,10 +5,20 @@
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
-      "version": "1.0.0"
+      "version": "${version}"
     },
     "title": "{{appTitle}}",
-    "description": "{{appDescription}}"
+    "description": "{{appDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -52,6 +62,13 @@
         "settings": {
           "bundleName": "be.rpan.demo.DemoReusableComponents.i18n.i18n"
         }
+      },
+      "": {
+        "dataSource": "mainService",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "json": true
+        }
       }
     },
     "resources": {
@@ -74,7 +91,9 @@
         {
           "name": "RouteMainView",
           "pattern": "RouteMainView",
-          "target": ["TargetMainView"]
+          "target": [
+            "TargetMainView"
+          ]
         }
       ],
       "targets": {
