@@ -1,0 +1,83 @@
+{
+  "_version": "1.21.0",
+  "sap.app": {
+    "id": "reuse.ProductSearch",
+    "type": "component",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "${version}"
+    },
+    "title": "{{compTitle}}",
+    "description": "{{compDescription}}",
+    "dataSources": {
+      "mainService": {
+        "uri": "/PRODUCT_SEARCH_SRV",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0",
+          "localUri": "localService/metadata.xml"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    },
+    "supportedThemes": [
+      "base",
+      "sap_belize",
+      "sap_belize_plus"
+    ]
+  },
+  "sap.ui5": {
+    "componentName": "reuse.ProductSearch",
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.ui.core": {},
+        "sap.m": {},
+        "sap.f": {},
+        "sap.ui.layout": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "reuse.ProductSearch.i18n.i18n"
+        }
+      },
+      "valueHelp": {
+        "dataSource": "mainService",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "json": true
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    }
+  }
+}

@@ -18,6 +18,11 @@ server:
       mountPath: /test-resources
       configuration:
         rootPath: ${env.SAPUI5_SDK_TEST_RESOURCES}
+    - name: ui5-middleware-servestatic
+      afterMiddleware: compression
+      mountPath: /resources/reuse/ProductSearch
+      configuration:
+        rootPath: "reuse/ProductSearch"
     - name: ui5-middleware-livereload
       afterMiddleware: compression
       configuration:

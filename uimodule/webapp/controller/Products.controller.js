@@ -48,6 +48,20 @@ sap.ui.define([
 					product: productId
 				});
 			}.bind(this));
+		},
+
+		onProductSearchUsageCreated: function (event) {
+			const component = event.getParameter("component");
+
+			component.attachProductsSelected(this.onProductsSelectedInComponent.bind(this));
+		},
+
+		onProductsSelectedInComponent: function (event) {
+			const products = event.getParameter("products");
+			const productText = products.reduce((prev, curr, index) => index === 0 ? curr.ProductName : prev + "," + curr.ProductName, "");
+			MessageBox.confirm(productText, {
+				title: "Selected products from reusable component"
+			});
 		}
 	});
 });

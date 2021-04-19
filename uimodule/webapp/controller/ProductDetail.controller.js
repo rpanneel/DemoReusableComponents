@@ -74,11 +74,11 @@ sap.ui.define([
 
 		handleClose: function () {
 			var sNextLayout = this.oModel.getProperty("/actionButtonsInfo/midColumn/closeColumn");
-			this.oRouter.navTo("master", { layout: sNextLayout });
+			this.oRouter.navTo("main", { layout: sNextLayout });
 		},
 
 		onExit: function () {
-			this.oRouter.getRoute("master").detachPatternMatched(this._onProductMatched, this);
+			this.oRouter.getRoute("main").detachPatternMatched(this._onProductMatched, this);
 			this.oRouter.getRoute("detail").detachPatternMatched(this._onProductMatched, this);
 		}
 	});

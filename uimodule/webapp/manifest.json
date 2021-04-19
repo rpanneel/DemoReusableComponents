@@ -82,6 +82,17 @@
         }
       ]
     },
+    "componentUsages": {
+      "productSearchUsage": {
+        "name": "reuse.ProductSearch",
+        "lazy": true,
+        "settings": {},
+        "componentData": {
+          "icon": "sap-icon://appear-offline",
+          "isMultiSelect": true
+        }
+      }
+    },
     "routing": {
       "config": {
         "routerClass": "sap.f.routing.Router",
@@ -95,7 +106,7 @@
       "routes": [
         {
           "name": "main",
-          "pattern": "",
+          "pattern": ":layout:",
           "target": [
             "products",
             "detail"

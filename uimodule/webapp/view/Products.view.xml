@@ -1,6 +1,7 @@
 <mvc:View
 	controllerName="be.rpan.demo.DemoReusableComponents.controller.Products"
 	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
 	xmlns:f="sap.f"
 	xmlns:mvc="sap.ui.core.mvc">
 	<f:DynamicPage id="dynamicPageId" toggleHeaderOnTitleClick="false">
@@ -17,6 +18,7 @@
 		<f:content>
 			<VBox fitContainer="true">
 				<OverflowToolbar class="sapFDynamicPageAlignContent">
+					<core:ComponentContainer id="productSearch" usage="productSearchUsage" async="true" propagateModel="true" componentCreated="onProductSearchUsageCreated" />
 					<ToolbarSpacer/>
 					<SearchField search="onSearch" width="17.5rem"/>
 					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent" press=".onAdd"/>
@@ -44,7 +46,7 @@
 					<items>
 						<ColumnListItem type="Navigation" press="onListItemPress">
 							<cells>
-								<ObjectIdentifier title="{ProductName}" text="{ProductId}"/>
+								<ObjectIdentifier title="{ProductName}" text="{ProductID}"/>
 								<ObjectNumber
 									number="{UnitPrice}"
 									unit="EUR"/>

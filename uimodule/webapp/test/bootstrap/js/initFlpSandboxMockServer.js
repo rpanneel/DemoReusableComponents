@@ -5,7 +5,8 @@ sap.ui.define(
 		"sap/m/MessageBox",
 		"sap/ui/fl/FakeLrepConnectorLocalStorage",
 		"sap/m/ActionSheet",
-		"sap/m/Button"
+		"sap/m/Button",
+		"reuse/ProductSearch/localService/mockserver"
 	],
 	function (
 		flpSandbox,
@@ -13,12 +14,14 @@ sap.ui.define(
 		MessageBox,
 		FakeLrepConnectorLocalStorage,
 		ActionSheet,
-		Button
+		Button,
+		productSearchMockServer
 	) {
 		"use strict";
 
 		const initializations = [
 			mockserver.init(),
+			productSearchMockServer.init(),
 			flpSandbox.init(),
 		];
 
