@@ -1,0 +1,13 @@
+<core:FragmentDefinition xmlns="sap.m"
+  xmlns:core="sap.ui.core"
+  xmlns:forms="sap.ui.layout.form"
+  xmlns:l="sap.ui.layout">
+  <forms:SimpleForm id="contactPersonForm" class="editableForm" columnsL="1" columnsM="1" editable="true" emptySpanL="2" emptySpanM="2" labelSpanL="3" labelSpanM="3" layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+    <forms:content>
+      <Label text="Name" />
+      <Text text="{ContactName}" />
+      <Label text="Title" />
+      <Text text="{ContactTitle}" />
+    </forms:content>
+  </forms:SimpleForm>
+</core:FragmentDefinition>

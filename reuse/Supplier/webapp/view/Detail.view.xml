@@ -1,0 +1,42 @@
+<mvc:View controllerName="be.rpan.supplier.controller.Detail"
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:f="sap.f"
+	xmlns:layout="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:semantic="sap.m.semantic"
+	xmlns:uxap="sap.uxap" height="100%">
+	<semantic:DetailPage id="detailPage" showNavButton="false" title="Supplier Detail">
+		<semantic:content>
+			<uxap:ObjectPageLayout showTitleInHeaderContent="true" enableLazyLoading="true" showEditHeaderButton="false" useIconTabBar="true">
+				<uxap:headerTitle>
+					<uxap:ObjectPageHeader objectImageURI="sap-icon://supplier" objectTitle="{CompanyName}" objectImageShape="Circle" objectImageAlt="{CompanyName}" objectSubtitle="{SupplierID}" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
+					</uxap:ObjectPageHeader>
+				</uxap:headerTitle>
+
+				<uxap:sections>
+					<uxap:ObjectPageSection id="addressSection" title="Address">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection id="addressSubSection">
+								<uxap:blocks>
+									<core:Fragment fragmentName="be.rpan.supplier.fragment.Address" type="XML" />
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+
+					<uxap:ObjectPageSection id="contactSection" title="Contact Person">
+						<uxap:subSections>
+							<uxap:ObjectPageSubSection id="contactSubSection">
+								<uxap:blocks>
+									<core:Fragment fragmentName="be.rpan.supplier.fragment.ContactPerson" type="XML" />
+								</uxap:blocks>
+							</uxap:ObjectPageSubSection>
+						</uxap:subSections>
+					</uxap:ObjectPageSection>
+				</uxap:sections>
+			</uxap:ObjectPageLayout>
+
+		</semantic:content>
+	</semantic:DetailPage>
+</mvc:View>

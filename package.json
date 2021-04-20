@@ -2,8 +2,8 @@
   "name": "DemoReusableComponents",
   "version": "0.0.1",
   "scripts": {
-    "start": "ui5 serve --config=uimodule/ui5.yaml  --open index.html",
-    "dev": "ui5 serve --config=uimodule/ui5.yaml  --open /test/bootstrap/localFlpSandboxMockServer.html",
+    "start": "ui5 serve --open index.html",
+    "dev": "ui5 serve --open /test/bootstrap/localFlpSandboxMockServer.html",
     "build:ui": "run-s  build:uimodule",
     "test": "run-s lint karma",
     "karma-ci": "karma start karma-ci.conf.js",
@@ -11,8 +11,8 @@
     "karma": "run-s clearCoverage karma-ci",
     "lint": "eslint .",
     "deploy": "run-s build:ui",
-    "serve:uimodule": "ui5 serve --config=uimodule/ui5.yaml",
-    "build:uimodule": "ui5 build --config=uimodule/ui5.yaml --clean-dest --a --dest dist/uimodule"
+    "serve:uimodule": "ui5 serve",
+    "build:uimodule": "ui5 build --clean-dest --a --dest dist/uimodule"
   },
   "devDependencies": {
     "shx": "^0.3.3",

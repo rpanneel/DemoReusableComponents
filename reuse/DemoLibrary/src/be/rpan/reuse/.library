@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library xmlns="http://www.sap.com/sap.ui.library.xsd">
+  <name>be.rpan.reuse</name>
+  <vendor>rpan</vendor>
+  <copyright>${copyright}</copyright>
+  <version>${version}</version>
+  <documentation>Library containing controls/utils/Components for demo Applications</documentation>
+  <dependencies>
+    <dependency>
+      <libraryName>sap.ui.core</libraryName>
+    </dependency>
+  </dependencies>
+</library>
