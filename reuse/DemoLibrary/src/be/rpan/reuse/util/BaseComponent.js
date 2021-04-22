@@ -27,6 +27,8 @@ sap.ui.define(
 				UIComponent.prototype.init.apply(this, arguments);
 
 				let router = this.getRouter();
+
+				// When router is created we process the event mapping
 				router.getViews().attachCreated(this._processEventMapping, this);
 				router.initialize();
 			},
