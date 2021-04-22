@@ -131,7 +131,7 @@
         },
         {
           "name": "supplier",
-          "pattern": "supplier/{id}",
+          "pattern": "supplier/{id}/{product}/{layout}",
           "target": {
             "name": "supplier",
             "prefix": "s"

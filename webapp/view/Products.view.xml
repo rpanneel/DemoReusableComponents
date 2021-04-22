@@ -1,5 +1,4 @@
-<mvc:View
-	controllerName="be.rpan.demo.DemoReusableComponents.controller.Products"
+<mvc:View controllerName="be.rpan.demo.DemoReusableComponents.controller.Products"
 	xmlns="sap.m"
 	xmlns:core="sap.ui.core"
 	xmlns:f="sap.f"
@@ -24,22 +23,17 @@
 					<OverflowToolbarButton icon="sap-icon://add" text="Add" type="Transparent" press=".onAdd"/>
 					<OverflowToolbarButton icon="sap-icon://sort" text="Sort" type="Transparent" press=".onSort"/>
 				</OverflowToolbar>
-				<Table
-					id="productsTable"
-					inset="false"
-					items="{
+				<Table id="productsTable" inset="false" items="{
 						path: '/Products',
 						sorter: {
 							path: 'ProductName'
 						}
-					}"
-					class="sapFDynamicPageAlignContent"
-					width="auto">
+					}" class="sapFDynamicPageAlignContent" width="auto">
 					<columns>
 						<Column width="12em">
 							<Text text="Product"/>
 						</Column>
-						<Column	hAlign="End">
+						<Column hAlign="End">
 							<Text text="Price"/>
 						</Column>
 					</columns>
@@ -47,9 +41,7 @@
 						<ColumnListItem type="Navigation" press="onListItemPress">
 							<cells>
 								<ObjectIdentifier title="{ProductName}" text="{ProductID}"/>
-								<ObjectNumber
-									number="{UnitPrice}"
-									unit="EUR"/>
+								<ObjectNumber number="{UnitPrice}" unit="EUR"/>
 							</cells>
 						</ColumnListItem>
 					</items>

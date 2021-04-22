@@ -9,6 +9,13 @@ sap.ui.define([
 			this.oOwnerComponent = this.getOwnerComponent();
 			this.oRouter = this.oOwnerComponent.getRouter();
 			this.oRouter.attachRouteMatched(this.onRouteMatched, this);
+
+			// Attach to events from the component
+			this.oOwnerComponent.attachEvent(
+				"fullScreen",
+				this.onSupplierComponentFullScreenPress,
+				this
+			);
 		},
 
 		onRouteMatched: function (oEvent) {
@@ -48,6 +55,27 @@ sap.ui.define([
 		onExit: function () {
 			this.oRouter.detachRouteMatched(this.onRouteMatched, this);
 			this.oRouter.detachBeforeRouteMatched(this.onBeforeRouteMatched, this);
+		},
+
+		onSupplierComponentFullScreenPress: function (event) {
+			// Get the "app"-model
+			const appModel = this.oOwnerComponent.getModel("app");
+
+			// Get the current layout
+			const currentLayout = appModel.getProperty("/layout");
+
+			switch (currentLayout) {
+				case "ThreeColumnsEndExpanded":	// We know that we are displaying supplier component in the FLC
+					appModel.setProperty("/layout", "EndColumnFullScreen");
+					break;
+				case "EndColumnFullScreen": // Supplier Component in full screen mode
+					appModel.setProperty("/layout", "ThreeColumnsEndExpanded");
+					break;
+				default:
+					break;
+			}
+
+
 		}
 	});
 });

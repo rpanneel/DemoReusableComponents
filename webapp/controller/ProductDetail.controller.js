@@ -12,7 +12,7 @@ sap.ui.define([
 
 			this.oRouter.getRoute("main").attachPatternMatched(this._onProductMatched, this);
 			this.oRouter.getRoute("detail").attachPatternMatched(this._onProductMatched, this);
-			//this.oRouter.getRoute("detailDetail").attachPatternMatched(this._onProductMatched, this);
+			this.oRouter.getRoute("supplier").attachPatternMatched(this._onProductMatched, this);
 		},
 
 		_onProductMatched: function (oEvent) {
@@ -80,6 +80,7 @@ sap.ui.define([
 		onExit: function () {
 			this.oRouter.getRoute("main").detachPatternMatched(this._onProductMatched, this);
 			this.oRouter.getRoute("detail").detachPatternMatched(this._onProductMatched, this);
+			this.oRouter.getRoute("supplier").attachPatternMatched(this._onProductMatched, this);
 		},
 
 		onPressSupplier: function (event) {
@@ -88,9 +89,18 @@ sap.ui.define([
 				.getBindingContext()
 				.getObject();
 
-			this.getRouter().navTo("supplier", {
-				id: supplier.SupplierID
-			});
+			this.getOwnerComponent().getHelper().then(function (helper) {
+				const nextUIState = helper.getNextUIState(2);
+				this.getRouter().navTo("supplier", {
+					id: supplier.SupplierID,
+					product: this._product,
+					layout: nextUIState.layout,
+				});
+			}.bind(this));
+
+
+
+
 		}
 	});
 });

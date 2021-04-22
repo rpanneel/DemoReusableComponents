@@ -10,8 +10,23 @@
 		<semantic:content>
 			<uxap:ObjectPageLayout showTitleInHeaderContent="true" enableLazyLoading="true" showEditHeaderButton="false" useIconTabBar="true">
 				<uxap:headerTitle>
-					<uxap:ObjectPageHeader objectImageURI="sap-icon://supplier" objectTitle="{CompanyName}" objectImageShape="Circle" objectImageAlt="{CompanyName}" objectSubtitle="{SupplierID}" isObjectTitleAlwaysVisible="false" isObjectSubtitleAlwaysVisible="false">
-					</uxap:ObjectPageHeader>
+					<uxap:ObjectPageDynamicHeaderTitle>
+						<uxap:heading>
+							<Title text="{CompanyName}" />
+						</uxap:heading>
+
+						<uxap:expandedContent>
+							<Text text="{CompanyName}"/>
+						</uxap:expandedContent>
+
+						<uxap:snappedContent>
+							<Text text="{CompanyName}"/>
+						</uxap:snappedContent>
+
+						<uxap:actions>
+							<uxap:ObjectPageHeaderActionButton id="btnFullscreen" type="Transparent" icon="sap-icon://full-screen" press="onFullScreenPress" visible="true" hideText="false" hideIcon="false"/>
+						</uxap:actions>
+					</uxap:ObjectPageDynamicHeaderTitle>
 				</uxap:headerTitle>
 
 				<uxap:sections>
