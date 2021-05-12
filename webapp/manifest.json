@@ -132,10 +132,14 @@
         {
           "name": "supplier",
           "pattern": "supplier/{id}/{product}/{layout}",
-          "target": {
-            "name": "supplier",
-            "prefix": "s"
-          },
+          "target": [
+            "products",
+            "detail",
+            {
+              "name": "supplier",
+              "prefix": "s"
+            }
+          ],
           "layout": "ThreeColumnsEndExpanded"
         }
       ],
